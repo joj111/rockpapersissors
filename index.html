@@ -3,15 +3,48 @@
 
   function computerPlay() {
     if (computerRandom === 1) {
-      return("Rock");
+      return("rock");
     } else if (computerRandom === 2) {
-      return("Paper");
+      return("paper");
     } else {
-      return("Sissors");
+      return("sissors");
     }
   }
 
 let computerResult = computerPlay()
 
-  console.log(computerResult)
+console.log(computerResult)
+
+  function playRound(playerSelection, computerSelection) {
+    if (playerSelection === "rock" && computerPlay() === "rock") {
+      return(tie);
+    } else if (playerSelection === "paper" && computerPlay() === "rock") {
+      return(win);
+    } else if (playerSelection === "sissors" && computerPlay() === "rock") {
+      return(lose)
+    } else if (playerSelection === "rock" && computerPlay() === "paper") {
+      return(lose);
+    } else if (playerSelection === "paper" && computerPlay() === "paper") {
+      return(tie);
+    } else if (playerSelection === "sissors" && computerPlay() === "paper") {
+      return(win)
+    } else if (playerSelection === "rock" && computerPlay() === "sissors") {
+      return(win);
+    } else if (playerSelection === "paper" && computerPlay() === "sissors") {
+      return(lose);
+    } else if (playerSelection === "sissors" && computerPlay() === "sissors") {
+      return(tie)
+    }
+  }
+
+  const win = "You Win!";
+  const tie = "You Tie!";
+  const lose = "You Lose!";
+
+  let playerSelectionPhase = "rock";
+  let playerSelection = playerSelectionPhase.toLowerCase();
+
+  const computerSelection = computerPlay();
+  console.log(playRound(playerSelection, computerSelection));
+
 </script>
