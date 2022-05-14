@@ -1,4 +1,7 @@
 <script>
+
+for (let i = 0; i < 5; i++) {
+
   let computerRandom = Math.floor(Math.random() * 3) + 1;
 
   function computerPlay() {
@@ -21,19 +24,19 @@ console.log(computerResult)
     } else if (playerSelection === "paper" && computerPlay() === "rock") {
       return(win);
     } else if (playerSelection === "sissors" && computerPlay() === "rock") {
-      return(lose)
+      return(lose);
     } else if (playerSelection === "rock" && computerPlay() === "paper") {
       return(lose);
     } else if (playerSelection === "paper" && computerPlay() === "paper") {
       return(tie);
     } else if (playerSelection === "sissors" && computerPlay() === "paper") {
-      return(win)
+      return(win);
     } else if (playerSelection === "rock" && computerPlay() === "sissors") {
       return(win);
     } else if (playerSelection === "paper" && computerPlay() === "sissors") {
       return(lose);
     } else if (playerSelection === "sissors" && computerPlay() === "sissors") {
-      return(tie)
+      return(tie);
     }
   }
 
@@ -41,10 +44,22 @@ console.log(computerResult)
   const tie = "You Tie!";
   const lose = "You Lose!";
 
-  let playerSelectionPhase = "rock";
+  let playerSelectionPhase = prompt("Rock Paper or Sissors?");
   let playerSelection = playerSelectionPhase.toLowerCase();
 
   const computerSelection = computerPlay();
   console.log(playRound(playerSelection, computerSelection));
+
+}
+//   if (playRound === win) {
+//     prompt("YOU WON NICE JOB (press enter to continue)");
+//   } else if (playRound === tie) {
+//     prompt("IT'S A TIE... ATLEAST YOU DIDN'T LOSE (press enter to continue")
+//   } else if (playRound === lose) {
+//     prompt("YOU LOST... HOW DID YOU LOSE (press enter to continue");
+//   }
+// }
+
+//doesn't work ^^
 
 </script>
