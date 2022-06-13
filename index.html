@@ -1,65 +1,21 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="gameDiv">
+        <h1 class="gameText" id="playerText">Player: </h1>
+        <h1 class="gameText" id="computerText">Computer: </h1>
+        <h1 class="gameText" id="resultText">Result: </h1>
 
-for (let i = 0; i < 5; i++) {
-
-  let computerRandom = Math.floor(Math.random() * 3) + 1;
-
-  function computerPlay() {
-    if (computerRandom === 1) {
-      return("rock");
-    } else if (computerRandom === 2) {
-      return("paper");
-    } else {
-      return("sissors");
-    }
-  }
-
-let computerResult = computerPlay()
-
-console.log(computerResult)
-
-  function playRound(playerSelection, computerSelection) {
-    if (playerSelection === "rock" && computerPlay() === "rock") {
-      return(tie);
-    } else if (playerSelection === "paper" && computerPlay() === "rock") {
-      return(win);
-    } else if (playerSelection === "sissors" && computerPlay() === "rock") {
-      return(lose);
-    } else if (playerSelection === "rock" && computerPlay() === "paper") {
-      return(lose);
-    } else if (playerSelection === "paper" && computerPlay() === "paper") {
-      return(tie);
-    } else if (playerSelection === "sissors" && computerPlay() === "paper") {
-      return(win);
-    } else if (playerSelection === "rock" && computerPlay() === "sissors") {
-      return(win);
-    } else if (playerSelection === "paper" && computerPlay() === "sissors") {
-      return(lose);
-    } else if (playerSelection === "sissors" && computerPlay() === "sissors") {
-      return(tie);
-    }
-  }
-
-  const win = "You Win!";
-  const tie = "You Tie!";
-  const lose = "You Lose!";
-
-  let playerSelectionPhase = prompt("Rock Paper or Sissors?");
-  let playerSelection = playerSelectionPhase.toLowerCase();
-
-  const computerSelection = computerPlay();
-  console.log(playRound(playerSelection, computerSelection));
-
-}
-//   if (playRound === win) {
-//     prompt("YOU WON NICE JOB (press enter to continue)");
-//   } else if (playRound === tie) {
-//     prompt("IT'S A TIE... ATLEAST YOU DIDN'T LOSE (press enter to continue")
-//   } else if (playRound === lose) {
-//     prompt("YOU LOST... HOW DID YOU LOSE (press enter to continue");
-//   }
-// }
-
-//doesn't work ^^
-
-</script>
+        <button class="choiceBtn">ROCK</button>
+        <button class="choiceBtn">PAPER</button>
+        <button class="choiceBtn">SCISSORS</button>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
